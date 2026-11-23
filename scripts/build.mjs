@@ -166,7 +166,7 @@ ${footer()}`;
 
 // ---------- página de cada casa ----------
 function projectPage(p) {
-  const gallery = p.images.map((im, i) => `<button type="button" class="thumb" data-src="${esc(img(im.src, 1800))}" data-alt="${esc(im.alt)}" aria-label="Photo ${i + 1}"${i === 0 ? ' aria-current="true"' : ""}><img src="${esc(img(im.src, 300))}" alt="" loading="lazy"></button>`).join("");
+  const gallery = p.images.map((im, i) => `<button type="button" class="thumb" data-src="${esc(img(im.src, 1800))}" data-alt="${esc(im.alt)}" aria-label="Photo ${i + 1}"${i === 0 ? ' aria-current="true"' : ""}><img src="${esc(img(im.src, 300))}" alt=""></button>`).join("");
   const ld = { "@context": "https://schema.org", "@type": "SingleFamilyResidence", name: p.address, address: { "@type": "PostalAddress", streetAddress: p.address, addressLocality: p.city, addressRegion: "FL", addressCountry: "US" }, numberOfRooms: p.beds, floorSize: p.sqft ? { "@type": "QuantitativeValue", value: p.sqft, unitCode: "FTK" } : undefined, image: p.images.map((i) => i.src) };
   const others = projects.filter((q) => q.slug !== p.slug).slice(0, 3);
   return `${head({ title: `${p.address}, ${p.city} | ${C.brand.name}`, description: p.summary, path: `/homes/${p.slug}/`, image: p.images[0]?.src })}<body>

@@ -125,6 +125,7 @@ legend{font-size:15px;font-weight:500;margin-bottom:6px}
 .back{display:inline-block;margin:24px 0 16px;text-decoration:none;color:var(--mute);font-weight:500}
 .back::before{content:"‹ "}
 .back:hover{color:var(--canal)}
+.pp-top>*,.pp-body>*,.hero-in>*,.contact-in>*,.why-in>*{min-width:0}
 .pp-top{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:44px;align-items:start}
 .pp-main{margin:0;aspect-ratio:3/2;border-radius:6px;overflow:hidden;background:var(--wash)}
 .pp-main img{width:100%;height:100%;object-fit:contain;background:var(--wash)}
