@@ -1,0 +1,54 @@
+{
+  "_nota": "Edita este archivo para cambiar marca, contacto y colores. Después el sitio se regenera solo.",
+
+  "domain": "www.andysoflo.com",
+  "brand": {
+    "name": "Andy SoFlo",
+    "wordmark": ["ANDY", "SOFLO"],
+    "descriptor": "Real Estate Advisor",
+    "logo": "/img/as-mark.png",
+    "logoOnDark": "/img/as-mark-light.png",
+    "tagline": {
+      "en": "South Florida. Simplified.",
+      "es": "Sur de Florida. Simplificado."
+    }
+  },
+
+  "agent": {
+    "name": "Andy Escandell",
+    "title": { "en": "REALTOR®", "es": "REALTOR®" },
+    "photo": "/img/andy.jpg",
+    "bio": {
+      "en": "I help buyers, sellers, renters and investors across Broward and Miami-Dade. For new construction, I keep track of every home on this site, so you get current prices, builder incentives and tour times in one message.",
+      "es": "Ayudo a compradores, vendedores, inquilinos e inversionistas en Broward y Miami-Dade. En obra nueva sigo cada casa de este sitio, para que recibas en un solo mensaje precios actuales, incentivos del constructor y horarios de visita."
+    },
+    "languages": "English y Español",
+    "areas": "Broward & Miami-Dade Counties",
+    "brokerage": "RE/MAX 5 Star Realty",
+    "license": "FL License SL3640201"
+  },
+
+  "contact": {
+    "phone": "561.467.1083",
+    "email": "andy@andysoflo.com",
+    "whatsapp": "15614671083",
+    "instagram": "",
+    "formEndpoint": ""
+  },
+
+  "theme": {
+    "ink": "#0c1a3d",
+    "paper": "#ffffff",
+    "wash": "#eef2fa",
+    "canal": "#1f5cf0",
+    "sun": "#7aa2ff",
+    "mute": "#56607a"
+  },
+
+  "source": {
+    "sitemap": "https://www.broward.io/sitemap.xml",
+    "projectPathPrefix": "/projects/",
+    "listingCourtesy": "Listing information courtesy of Garcés Team, RE/MAX 5 Star Realty",
+    "hideStatuses": ["Sold", "Closed", "Off Market", "Withdrawn"]
+  }
+}

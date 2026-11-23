@@ -1,0 +1,59 @@
+name: Sincronizar casas y publicar
+
+on:
+  schedule:
+    - cron: "17 * * * *"     # cada hora (minuto 17)
+  workflow_dispatch:          # botón "Run workflow" para forzar una actualización
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Leer broward.io y actualizar data/projects.json
+        id: sync
+        continue-on-error: true   # si la fuente falla, se publica la última versión buena
+        run: node scripts/sync.mjs
+
+      - name: Guardar cambios en el repositorio
+        run: |
+          if [[ -n "$(git status --porcelain data/)" ]]; then
+            git config user.name "andysoflo-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add data/projects.json
+            git commit -m "Actualiza casas disponibles"
+            git push
+          fi
+
+      - name: Generar sitio
+        run: node scripts/build.mjs
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
