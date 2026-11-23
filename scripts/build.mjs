@@ -2,7 +2,8 @@
 // Uso: node scripts/build.mjs
 
 import { readFile, writeFile, mkdir, rm, cp } from "node:fs/promises";
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 
 const root = new URL("..", import.meta.url);
 const C = JSON.parse(await readFile(new URL("site.config.json", root), "utf8"));
@@ -11,6 +12,8 @@ const dist = new URL("dist/", root);
 
 const hide = (C.source.hideStatuses || []).map((s) => s.toLowerCase());
 const projects = D.projects.filter((p) => !hide.includes(String(p.status).toLowerCase()));
+
+const ver = createHash("sha1").update(readFileSync(new URL("src/assets/site.css", root))).update(readFileSync(new URL("src/assets/site.js", root))).digest("hex").slice(0, 8);
 
 // ---------- utilidades ----------
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -40,7 +43,7 @@ function head({ title, description, path = "/", image }) {
   return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="${siteUrl}${path}">
 <meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${siteUrl}${path}">${image ? `<meta property="og:image" content="${esc(img(image, 1200))}">` : ""}
-<meta name="twitter:card" content="summary_large_image">${fonts}<link rel="stylesheet" href="/assets/site.css">${themeVars}
+<meta name="twitter:card" content="summary_large_image">${fonts}<link rel="stylesheet" href="/assets/site.css?v=${ver}">${themeVars}
 <link rel="icon" type="image/png" href="${esc(C.brand.logo || "/favicon.png")}"></head>`;
 }
 
@@ -81,7 +84,7 @@ function footer() {
 <div class="foot-col"><p><a href="tel:${esc(tel)}">${esc(C.contact.phone)}</a><br><a href="mailto:${esc(C.contact.email)}">${esc(C.contact.email)}</a>${C.contact.instagram ? `<br><a href="https://instagram.com/${esc(C.contact.instagram.replace("@", ""))}" target="_blank" rel="noopener">Instagram</a>` : ""}</p></div>
 </div><div class="wrap foot-legal"><p>${esc(C.source.listingCourtesy)}. ${t("Prices, availability and features may change without notice. Information deemed reliable but not guaranteed.", "Precios, disponibilidad y características pueden cambiar sin aviso. Información confiable pero no garantizada.")}</p>
 <p>${t(`Listings updated ${updatedEn}.`, `Propiedades actualizadas el ${updatedEs}.`)} © ${new Date().getFullYear()} ${esc(C.brand.name)}.</p></div></footer>
-<script src="/assets/site.js" defer></script></body></html>`;
+<script src="/assets/site.js?v=${ver}" defer></script></body></html>`;
 }
 
 const facts = (p) => [
