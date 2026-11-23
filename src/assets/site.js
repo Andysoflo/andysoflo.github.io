@@ -13,7 +13,8 @@
     if (btn) btn.textContent = lang === "es" ? "EN" : "ES";
     store.set("lang", lang);
   }
-  const initial = store.get("lang") || ((navigator.language || "").toLowerCase().startsWith("es") ? "es" : "en");
+  const langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""]).map((l) => l.toLowerCase());
+  const initial = store.get("lang") || (langs[0].startsWith("es") || (langs.some((l) => l.startsWith("es")) && !langs[0].startsWith("en")) ? "es" : "en");
   if (initial === "es") setLang("es");
   btn?.addEventListener("click", () => setLang(document.documentElement.lang === "es" ? "en" : "es"));
 

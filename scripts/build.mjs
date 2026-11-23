@@ -40,7 +40,7 @@ const fonts = `<link rel="preconnect" href="https://fonts.googleapis.com"><link 
 const themeVars = `<style>:root{--ink:${C.theme.ink};--paper:${C.theme.paper};--wash:${C.theme.wash};--canal:${C.theme.canal};--sun:${C.theme.sun};--mute:${C.theme.mute}}</style>`;
 
 function head({ title, description, path = "/", image }) {
-  return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  return `<!DOCTYPE html><html lang="en" translate="no"><head><meta charset="utf-8"><meta name="google" content="notranslate"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="${siteUrl}${path}">
 <meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${siteUrl}${path}">${image ? `<meta property="og:image" content="${esc(img(image, 1200))}">` : ""}
 <meta name="twitter:card" content="summary_large_image">${fonts}<link rel="stylesheet" href="/assets/site.css?v=${ver}">${themeVars}
