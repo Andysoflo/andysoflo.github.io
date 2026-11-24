@@ -1,6 +1,40 @@
 {
-  "updatedAt": "2026-11-24T16:56:19.565Z",
+  "updatedAt": "2026-11-24T19:21:36.304Z",
   "deals": [
+    {
+      "slug": "4165-nw-90th-ave-coral-springs-fl-33065",
+      "address": "4165 NW 90th Ave",
+      "city": "Coral Springs",
+      "zip": "33065",
+      "county": "Broward",
+      "type": "Condo",
+      "beds": 2,
+      "baths": 1,
+      "sqft": 850,
+      "lot": null,
+      "year": null,
+      "pool": false,
+      "parking": "",
+      "extras": [
+        {
+          "label": "TENANT STATUS",
+          "value": "Vacant"
+        },
+        {
+          "label": "REPAIRS NEEDED",
+          "value": "Paint, stove and refrigerator needed. Original bathroom."
+        }
+      ],
+      "notes": "First-floor corner 2 bed / 1 bath condo in Ramblewood East, an all-ages community. Kitchen updated in 2010; original bathroom; tile floors in decent shape. Needs paint, a stove and a refrigerator. HOA $290/mo. The community has a one-year waiting period before renting. Amenities: four pools (one heated), two clubhouses, a tennis court and a game room. Vacant.",
+      "photos": "",
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795546495/4165-nw-90th-ave-coral-springs.jpg",
+          "alt": "4165 NW 90th Ave, Coral Springs, FL 33065"
+        }
+      ],
+      "price": 119500
+    },
     {
       "slug": "17720-sw-89th-ct-palmetto-bay-fl-33157",
       "address": "17720 SW 89th Ct",
@@ -277,61 +311,6 @@
         }
       ],
       "price": 504600
-    },
-    {
-      "slug": "145-nw-32nd-st-miami-fl-33127",
-      "address": "145 NW 32nd St",
-      "city": "Miami",
-      "zip": "33127",
-      "county": "Miami-Dade",
-      "type": "Multi-Family",
-      "beds": 4,
-      "baths": 3,
-      "sqft": 1788,
-      "lot": 4350,
-      "year": 1925,
-      "pool": false,
-      "parking": "",
-      "extras": [
-        {
-          "label": "ZONING",
-          "value": "T4"
-        }
-      ],
-      "notes": "Wynwood Norte. Listed as a legal triplex: 2/1 + 1/1 + 1/1. T4 zoning under the Wynwood Norte plan.",
-      "photos": "",
-      "images": [
-        {
-          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795448237/145-nw-32nd-st-miami.jpg",
-          "alt": "145 NW 32nd St, Miami, FL 33127"
-        }
-      ],
-      "price": 746000
-    },
-    {
-      "slug": "16461-nw-19th-ct-miami-gardens-fl-33054",
-      "address": "16461 NW 19th Ct",
-      "city": "Miami Gardens",
-      "zip": "33054",
-      "county": "Miami-Dade",
-      "type": "Single Family",
-      "beds": 2,
-      "baths": 1,
-      "sqft": 720,
-      "lot": 9000,
-      "year": 1950,
-      "pool": false,
-      "parking": "",
-      "extras": [],
-      "notes": "Concrete block home on a 9,000 SF lot with significant expansion potential (subject to permitting).",
-      "photos": "",
-      "images": [
-        {
-          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795448234/16461-nw-19th-ct-miami-gardens.jpg",
-          "alt": "16461 NW 19th Ct, Miami Gardens, FL 33054"
-        }
-      ],
-      "price": 339800
     }
   ]
 }
