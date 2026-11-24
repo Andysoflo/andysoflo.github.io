@@ -4,6 +4,7 @@
 import { readFile, writeFile, mkdir, rm, cp } from "node:fs/promises";
 import { existsSync, readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
+import { DEAL_EXTRA_ES } from "./parse.mjs";
 
 const root = new URL("..", import.meta.url);
 const C = JSON.parse(await readFile(new URL("site.config.json", root), "utf8"));
@@ -12,6 +13,8 @@ const dist = new URL("dist/", root);
 
 const hide = (C.source.hideStatuses || []).map((s) => s.toLowerCase());
 const projects = D.projects.filter((p) => !hide.includes(String(p.status).toLowerCase()));
+const DL = existsSync(new URL("data/deals.json", root)) ? JSON.parse(readFileSync(new URL("data/deals.json", root), "utf8")) : { deals: [] };
+const deals = C.offMarket?.enabled === false ? [] : DL.deals;
 
 const ver = createHash("sha1").update(readFileSync(new URL("src/assets/site.css", root))).update(readFileSync(new URL("src/assets/site.js", root))).digest("hex").slice(0, 8);
 
@@ -39,9 +42,9 @@ const siteUrl = `https://${C.domain}`;
 const fonts = `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=Montserrat:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">`;
 const themeVars = `<style>:root{--ink:${C.theme.ink};--paper:${C.theme.paper};--wash:${C.theme.wash};--canal:${C.theme.canal};--sun:${C.theme.sun};--mute:${C.theme.mute}}</style>`;
 
-function head({ title, description, path = "/", image }) {
+function head({ title, description, path = "/", image, noindex = false }) {
   return `<!DOCTYPE html><html lang="en" translate="no"><head><meta charset="utf-8"><meta name="google" content="notranslate"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="${siteUrl}${path}">
+<title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="${siteUrl}${path}">${noindex ? `<meta name="robots" content="noindex">` : ""}
 <meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${siteUrl}${path}">${image ? `<meta property="og:image" content="${esc(img(image, 1200))}">` : ""}
 <meta name="twitter:card" content="summary_large_image">${fonts}<link rel="stylesheet" href="/assets/site.css?v=${ver}">${themeVars}
 <link rel="icon" type="image/png" href="${esc(C.brand.logo || "/favicon.png")}"></head>`;
@@ -55,20 +58,20 @@ const logoDark = logoFor(C.brand.logoOnDark || C.brand.logo);
 function nav(base = "") {
   return `<header class="nav"><div class="wrap nav-in">
 <a href="/" class="brand" aria-label="${esc(C.brand.name)}">${logo}</a>
-<nav aria-label="Main"><a href="${base}#homes">${t("Homes", "Casas")}</a><a href="${base}#about">${t("About", "Sobre mí")}</a><a href="${base}#contact" class="nav-cta">${t("Contact", "Contacto")}</a>
+<nav aria-label="Main"><a href="${base}#homes">${t("New homes", "Obra nueva")}</a>${deals.length ? `<a href="/off-market/">Off market</a>` : ""}<a href="${base}#about">${t("About", "Sobre mí")}</a><a href="${base}#contact" class="nav-cta">${t("Contact", "Contacto")}</a>
 <button class="lang" type="button" aria-label="Cambiar idioma / Change language">ES</button></nav></div></header>`;
 }
 
-function contactBlock(context = "") {
-  const msg = context ? `Hi! I'm interested in ${context}.` : "Hi! I'd like information about new construction homes.";
+function contactBlock(context = "", role = "Buyer") {
+  const msg = context ? `Hi Andy! I'm interested in ${context}.` : "Hi Andy! I'd like information about new construction homes.";
   const waUrl = wa(msg);
   return `<form class="form" data-endpoint="${esc(C.contact.formEndpoint)}" data-email="${esc(C.contact.email)}" data-context="${esc(context)}">
 <div class="row2"><label>${t("Name", "Nombre")}<input name="name" required autocomplete="name"></label>
 <label>${t("Phone", "Teléfono")}<input name="phone" type="tel" autocomplete="tel"></label></div>
 <label>Email<input name="email" type="email" required autocomplete="email"></label>
 <fieldset><legend>${t("I'm a", "Soy")}</legend><div class="chips">
-<label><input type="radio" name="role" value="Buyer" checked>${t("Buyer", "Comprador")}</label>
-<label><input type="radio" name="role" value="Investor">${t("Investor", "Inversionista")}</label>
+<label><input type="radio" name="role" value="Buyer"${role === "Buyer" ? " checked" : ""}>${t("Buyer", "Comprador")}</label>
+<label><input type="radio" name="role" value="Investor"${role === "Investor" ? " checked" : ""}>${t("Investor", "Inversionista")}</label>
 <label><input type="radio" name="role" value="Realtor">Realtor</label></div></fieldset>
 <label>${t("Message", "Mensaje")}<textarea name="message" rows="4" data-es-placeholder="¿Qué buscas? Zona, presupuesto, fecha de mudanza…" placeholder="What are you looking for? Area, budget, move-in date…">${esc(context ? `I'd like details on ${context}.` : "")}</textarea></label>
 <div class="form-actions"><button class="btn" type="submit">${t("Send message", "Enviar mensaje")}</button>
@@ -97,6 +100,119 @@ const facts = (p) => [
 ].filter(Boolean);
 
 const specLine = (p) => [p.beds != null && `${n(p.beds)} bd`, p.baths != null && `${n(p.baths)} ba`, p.sqft && `${n(p.sqft)} sf`].filter(Boolean).join("  /  ");
+
+// ---------- off market ----------
+const DTYPE_ES = { "single family": "Unifamiliar", condo: "Condominio", "multi-family": "Multifamiliar", townhouse: "Townhouse", land: "Terreno", commercial: "Comercial" };
+const dealKey = (d) => (/multi|duplex|triplex/i.test(d.type) ? "multifamily" : /condo|town/i.test(d.type) ? "condo" : /land|lot/i.test(d.type) ? "land" : "single");
+const dealType = (d) => t(d.type || "Property", DTYPE_ES[String(d.type).toLowerCase()] || d.type || "Propiedad");
+const dealSpec = (d) => [d.beds != null && `${n(d.beds)} bd`, d.baths != null && `${n(d.baths)} ba`, d.sqft && `${n(d.sqft)} sf`, d.lot && `${n(d.lot)} sf lot`, d.year && `built ${d.year}`].filter(Boolean).join("  /  ");
+const extraLabel = (x) => { const en = x.label.charAt(0) + x.label.slice(1).toLowerCase(); return t(en, DEAL_EXTRA_ES[x.label] || en); };
+const dealTags = (d) => {
+  const ex = Object.fromEntries(d.extras.map((x) => [x.label, x.value]));
+  return [
+    d.pool && t("Pool", "Piscina"),
+    ex["RENTAL INCOME"] && t(`Rent ${ex["RENTAL INCOME"]}/mo`, `Renta ${ex["RENTAL INCOME"]}/mes`),
+    ex["TENANT STATUS"] && ex["TENANT STATUS"].length <= 32 && esc(ex["TENANT STATUS"]),
+    ex["ZONING"] && t(`Zoning ${ex["ZONING"]}`, `Zonificación ${ex["ZONING"]}`),
+    /seller financing/i.test(d.notes) && t("Seller financing", "Financiamiento del vendedor"),
+    /55\+/.test(d.notes) && t("55+ community", "Comunidad 55+"),
+  ].filter(Boolean).slice(0, 3);
+};
+const disclosure = () => t(
+  "Off-market deals are usually offered through an assignment of contract: the party offering the deal holds an equitable interest in the property and is not the owner of record. Details come from third parties; verify them before you buy. Price and availability can change at any time.",
+  "Los deals off market normalmente se ofrecen como cesión de contrato (assignment): quien ofrece el deal tiene un interés equitativo sobre la propiedad y no es el dueño registrado. Los datos vienen de terceros; verifícalos antes de comprar. Precio y disponibilidad pueden cambiar en cualquier momento.", "p");
+
+function dealCard(d) {
+  const tags = dealTags(d);
+  return `<article class="deal" data-type="${dealKey(d)}" data-price="${d.price || 0}"><a href="/off-market/${d.slug}/" class="deal-link">
+<p class="deal-meta">${dealType(d)}, ${esc(d.county ? d.county + " County" : d.city)}</p>
+<h3>${esc(d.address)}</h3><p class="deal-city">${esc(d.city)}, FL ${esc(d.zip)}</p>
+<p class="deal-price">${money(d.price)}</p>
+<p class="card-spec">${dealSpec(d)}</p>
+${tags.length ? `<p class="deal-tags">${tags.map((x) => `<span>${x}</span>`).join("")}</p>` : ""}
+</a></article>`;
+}
+
+function offMarketPage() {
+  const keys = [...new Set(deals.map(dealKey))];
+  const counties = [...new Set(deals.map((d) => d.county).filter(Boolean))];
+  const label = { single: t("Single-family", "Unifamiliares"), condo: t("Condos", "Condominios"), multifamily: t("Multi-family", "Multifamiliares"), land: t("Land", "Terrenos") };
+  return `${head({ title: `Off-market deals in South Florida | ${C.brand.name}`, description: `Off-market investment properties in ${counties.join(", ")}. Contact ${C.agent.name} for the full deal package.`, path: "/off-market/", noindex: true })}<body>
+${nav("/")}
+<main>
+<section class="om-hero"><div class="wrap">
+${t("Off-market deals", "Deals off market", "h1")}
+${t(`${deals.length} investment properties that aren't on the MLS, across ${counties.join(", ")}. They move fast: ask for the full package before you make an offer.`, `${deals.length} propiedades de inversión que no están en el MLS, en ${counties.join(", ")}. Se venden rápido: pide el paquete completo antes de ofertar.`, "p")}
+</div></section>
+<section class="homes om-list"><div class="wrap">
+<div class="sec-head"><div class="filters" role="group" aria-label="Filter">
+<button type="button" class="chip" aria-pressed="true" data-filter="all">${t("All", "Todos")} <span class="count">${deals.length}</span></button>
+${keys.map((k) => `<button type="button" class="chip" aria-pressed="false" data-filter="${k}">${label[k]}</button>`).join("")}
+<label class="sort">${t("Sort", "Ordenar")} <select id="sort"><option value="featured" data-es="Más recientes">Newest</option><option value="asc" data-es="Precio: menor a mayor">Price: low to high</option><option value="desc" data-es="Precio: mayor a menor">Price: high to low</option></select></label>
+</div></div>
+<div class="deal-grid" id="grid">${deals.map(dealCard).join("")}</div>
+<p class="empty" hidden>${t("No deals match this filter right now. Tell me your buy box and I'll send matches as they come in.", "No hay deals con este filtro ahora mismo. Dime qué buscas y te envío los que encajen apenas lleguen.")}</p>
+<div class="om-note">${disclosure()}</div>
+</div></section>
+<section id="contact" class="contact"><div class="wrap contact-in">
+<div>${t("Tell me your buy box", "Dime qué estás buscando", "h2")}
+${t("Area, budget, property type and how you're paying. I'll send you new off-market deals that fit before they're gone.", "Zona, presupuesto, tipo de propiedad y forma de pago. Te envío los nuevos deals off market que encajen antes de que se vayan.", "p")}
+<p class="direct"><a href="tel:${esc(tel)}">${esc(C.contact.phone)}</a><br><a href="mailto:${esc(C.contact.email)}">${esc(C.contact.email)}</a></p></div>
+${contactBlock("", "Investor")}</div></section>
+</main>
+${footer()}`;
+}
+
+function dealPage(d) {
+  const ctx = `the off-market deal at ${d.address}, ${d.city}`;
+  const waUrl = wa(`Hi Andy! I'm interested in ${ctx}.`);
+  const rows = [
+    d.beds != null && [t("Bedrooms", "Habitaciones"), n(d.beds)],
+    d.baths != null && [t("Bathrooms", "Baños"), n(d.baths)],
+    d.sqft && [t("Living area", "Área habitable"), `${n(d.sqft)} sf`],
+    d.lot && [t("Lot", "Terreno"), `${n(d.lot)} sf`],
+    d.year && [t("Year built", "Año"), String(d.year)],
+    d.pool != null && [t("Pool", "Piscina"), d.pool ? t("Yes", "Sí") : "No"],
+    d.parking && [t("Parking", "Estacionamiento"), esc(d.parking)],
+    d.county && [t("County", "Condado"), esc(d.county)],
+  ].filter(Boolean);
+  const others = deals.filter((x) => x.slug !== d.slug).slice(0, 3);
+  return `${head({ title: `${d.address}, ${d.city} off-market deal | ${C.brand.name}`, description: `${d.type} in ${d.city}, FL. ${money(d.price)}. ${d.notes}`.slice(0, 300), path: `/off-market/${d.slug}/`, noindex: true })}<body>
+${nav("/")}
+<main class="pp">
+<div class="wrap"><a href="/off-market/" class="back">${t("All off-market deals", "Todos los deals off market")}</a></div>
+<section class="wrap pp-top deal-top">
+<div class="deal-sheet">
+<p class="card-type">${dealType(d)}, ${esc(d.county ? d.county + " County" : "")} <span class="status inline">Off market</span></p>
+<h1>${esc(d.address)}</h1>
+<p class="deal-city">${esc(d.city)}, FL ${esc(d.zip)}</p>
+<p class="deal-price deal-price-m">${money(d.price)}</p>
+<dl class="facts">${rows.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("")}</dl>
+${d.extras.length ? `<dl class="extras">${d.extras.map((x) => `<div><dt>${extraLabel(x)}</dt><dd>${esc(x.value)}</dd></div>`).join("")}</dl>` : ""}
+${d.notes ? `${t("Deal notes", "Notas del deal", "h2")}<p class="deal-notes">${esc(d.notes)}</p>` : ""}
+</div>
+<aside class="pp-side">
+<p class="pp-price">${money(d.price)}</p>
+${t("Asking price. Send proof of funds or a pre-approval to request access and the full package.", "Precio de venta. Envía prueba de fondos o pre-aprobación para pedir acceso y el paquete completo.", "p")}
+<div class="pp-cta"><a class="btn" href="#ask">${t("Request this deal", "Pedir este deal")}</a>${waUrl ? `<a class="btn ghost" href="${waUrl}" target="_blank" rel="noopener">WhatsApp</a>` : `<a class="btn ghost" href="tel:${esc(tel)}">${t("Call", "Llamar")}</a>`}</div>
+${d.photos ? `<p class="photos-link"><a href="${esc(d.photos)}" target="_blank" rel="noopener">${t("See photos", "Ver fotos")}</a></p>` : ""}
+<div class="om-note">${disclosure()}</div>
+</aside></section>
+<section class="wrap deal-ask">
+<div id="ask" class="pp-form">${t("Ask about this deal", "Pregunta por este deal", "h2")}${contactBlock(`${d.address}, ${d.city} (off market)`, "Investor")}</div>
+</section>
+${others.length ? `<section class="wrap more">${t("More off-market deals", "Más deals off market", "h2")}<div class="deal-grid">${others.map(dealCard).join("")}</div></section>` : ""}
+</main>
+${footer()}`;
+}
+
+function offMarketTeaser() {
+  if (!deals.length) return "";
+  return `<section id="off-market" class="om-teaser"><div class="wrap">
+<div class="sec-head"><div>${t("Off-market deals", "Deals off market", "h2")}${t(`Investment properties that aren't on the MLS. ${deals.length} available now.`, `Propiedades de inversión que no están en el MLS. ${deals.length} disponibles ahora.`, "p")}</div>
+<a class="btn ghost" href="/off-market/">${t(`See all ${deals.length} deals`, `Ver los ${deals.length} deals`)}</a></div>
+<div class="deal-grid">${deals.slice(0, 3).map(dealCard).join("")}</div></div></section>`;
+}
 
 // ---------- inicio ----------
 function homePage() {
@@ -148,6 +264,8 @@ ${types.includes("multifamily") ? `<button type="button" class="chip" aria-press
 <div class="grid" id="grid">${cards}</div>
 <p class="empty" hidden>${t("No homes match this filter right now. Ask me about what's coming next.", "No hay casas con este filtro ahora mismo. Pregúntame por lo que viene.")}</p>
 </div></section>
+
+${offMarketTeaser()}
 
 <section class="why"><div class="wrap why-in">
 ${t("Why buy new", "Por qué comprar nuevo", "h2")}
@@ -212,12 +330,21 @@ for (const p of projects) {
   await mkdir(dir, { recursive: true });
   await writeFile(new URL("index.html", dir), projectPage(p));
 }
-await writeFile(new URL("404.html", dist), `${head({ title: `Page not found | ${C.brand.name}`, description: "" })}<body>${nav("/")}<main class="wrap notfound">${t("This home is no longer listed.", "Esta casa ya no está publicada.", "h1")}${t("It may have sold. Here's everything available today:", "Puede que se haya vendido. Esto es lo disponible hoy:", "p")}<p><a class="btn" href="/#homes">${t("See available homes", "Ver casas disponibles")}</a></p></main>${footer()}`);
+if (deals.length) {
+  await mkdir(new URL("off-market/", dist), { recursive: true });
+  await writeFile(new URL("off-market/index.html", dist), offMarketPage());
+  for (const d of deals) {
+    const dir = new URL(`off-market/${d.slug}/`, dist);
+    await mkdir(dir, { recursive: true });
+    await writeFile(new URL("index.html", dir), dealPage(d));
+  }
+}
+await writeFile(new URL("404.html", dist), `${head({ title: `Page not found | ${C.brand.name}`, description: "" })}<body>${nav("/")}<main class="wrap notfound">${t("This property is no longer listed.", "Esta propiedad ya no está publicada.", "h1")}${t("It may have sold. Here's everything available today:", "Puede que se haya vendido. Esto es lo disponible hoy:", "p")}<p class="pp-cta"><a class="btn" href="/#homes">${t("New homes", "Obra nueva")}</a>${deals.length ? `<a class="btn ghost" href="/off-market/">Off market</a>` : ""}</p></main>${footer()}`);
 await writeFile(new URL("CNAME", dist), C.domain + "\n");
 await writeFile(new URL("robots.txt", dist), `User-agent: *\nAllow: /\nSitemap: ${siteUrl}/sitemap.xml\n`);
 await writeFile(new URL("sitemap.xml", dist), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${["/", ...projects.map((p) => `/homes/${p.slug}/`)].map((u) => `<url><loc>${siteUrl}${u}</loc><lastmod>${D.updatedAt.slice(0, 10)}</lastmod></url>`).join("\n")}\n</urlset>\n`);
 await writeFile(new URL("projects.json", dist), JSON.stringify({ updatedAt: D.updatedAt, projects }, null, 2));
 
 const todo = ["agent.name", "agent.brokerage", "contact.phone", "contact.email"].filter((k) => isPlaceholder(k.split(".").reduce((o, x) => o[x], C)));
-console.log(`✔ Sitio generado en dist/ con ${projects.length} casas.`);
+console.log(`✔ Sitio generado en dist/ con ${projects.length} casas y ${deals.length} deals off market.`);
 if (todo.length) console.warn("⚠ Falta completar en site.config.json:", todo.join(", "));

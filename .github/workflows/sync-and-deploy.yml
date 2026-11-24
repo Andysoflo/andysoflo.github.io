@@ -31,13 +31,20 @@ jobs:
         continue-on-error: true   # si la fuente falla, se publica la última versión buena
         run: node scripts/sync.mjs
 
+      - name: Leer deals off market (fuente y margen en secretos)
+        continue-on-error: true
+        env:
+          DEALS_SOURCE: ${{ secrets.DEALS_SOURCE }}
+          DEALS_MARKUP: ${{ secrets.DEALS_MARKUP }}
+        run: node scripts/sync-deals.mjs
+
       - name: Guardar cambios en el repositorio
         run: |
           if [[ -n "$(git status --porcelain data/)" ]]; then
             git config user.name "andysoflo-bot"
             git config user.email "actions@users.noreply.github.com"
-            git add data/projects.json
-            git commit -m "Actualiza casas disponibles"
+            git add data/projects.json data/deals.json
+            git commit -m "Actualiza casas y deals disponibles"
             git push
           fi
 
