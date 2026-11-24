@@ -162,7 +162,7 @@ export const DEAL_EXTRA_ES = {
   "HOA": "HOA",
 };
 const SECTION_HEADS = new Set(["KEY PROPERTY INFORMATION", "INVESTMENT DETAILS", "DEAL INFORMATION", "NOTES"]);
-const isLabel = (s) => s.length <= 40 && s === s.toUpperCase() && /[A-Z]/.test(s) && !/^\$/.test(s);
+const isLabel = (s) => s.length <= 40 && s === s.toUpperCase() && /[A-Z]{2}/.test(s) && !/\d/.test(s) && !/^(YES|NO)$/.test(s);
 
 export function parseDeal(html, url) {
   const chunks = textChunks(html);
