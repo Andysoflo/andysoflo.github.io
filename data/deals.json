@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T19:21:36.304Z",
+  "updatedAt": "2026-11-24T21:13:04.642Z",
   "deals": [
     {
       "slug": "4165-nw-90th-ave-coral-springs-fl-33065",
@@ -34,6 +34,36 @@
         }
       ],
       "price": 119500
+    },
+    {
+      "slug": "18812-nw-32nd-ct-miami-gardens-fl-33056",
+      "address": "18812 NW 32nd Ct",
+      "city": "Miami Gardens",
+      "zip": "33056",
+      "county": "Miami-Dade",
+      "type": "Single Family",
+      "beds": 3,
+      "baths": 1,
+      "sqft": 1107,
+      "lot": 8500,
+      "year": null,
+      "pool": false,
+      "parking": "",
+      "extras": [
+        {
+          "label": "REPAIRS NEEDED",
+          "value": "Estimated repairs $50,000"
+        }
+      ],
+      "notes": "3 bed / 1 bath single-family home in Miami Gardens on an 8,500 SF lot. Estimated repairs $50,000.",
+      "photos": "",
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795545686/18812-nw-32nd-ct-miami-gardens.jpg",
+          "alt": "18812 NW 32nd Ct, Miami Gardens, FL 33056"
+        }
+      ],
+      "price": 432500
     },
     {
       "slug": "17720-sw-89th-ct-palmetto-bay-fl-33157",
