@@ -209,7 +209,23 @@ export function parseDeal(html, url) {
     extras,
     notes,
     photos: (share.match(/Photos:\s*(https:\/\/\S+)/) || [])[1] || "",
+    images: dealImages(html, title),
   };
+}
+
+// Fotos de la ficha: cualquier <img> que no sea el logo del sitio (normalmente Cloudinary).
+function dealImages(html, title) {
+  const seen = new Set();
+  const out = [];
+  for (const tag of stripNoise(html).match(/<img\b[^>]*>/gi) ?? []) {
+    const src = attr(tag, "src");
+    if (!/^https:\/\//.test(src) || /framerusercontent\.com/.test(src)) continue;
+    const key = src.split("?")[0];
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push({ src: key, alt: attr(tag, "alt") || title });
+  }
+  return out;
 }
 
 // Margen por tramos según el precio original. tiers: [{ upTo: 150000, pct: 4 }, { upTo: 600000, pct: 3 }, { upTo: null, pct: 2.2 }]

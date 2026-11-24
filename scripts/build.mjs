@@ -23,7 +23,7 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "
 const t = (en, es, tag = "span") => `<${tag} data-es="${esc(es)}">${esc(en)}</${tag}>`;
 const money = (n) => (n ? "$" + Math.round(n).toLocaleString("en-US") : "");
 const n = (v) => (v == null ? "" : Number(v).toLocaleString("en-US"));
-const img = (src, w = 1400) => (src && src.includes("framerusercontent.com") ? `${src}?scale-down-to=${w}` : src);
+const img = (src, w = 1400) => (!src ? src : src.includes("framerusercontent.com") ? `${src}?scale-down-to=${w}` : src.includes("res.cloudinary.com") && src.includes("/upload/") ? src.replace("/upload/", `/upload/w_${w},c_limit,f_auto,q_auto/`) : src);
 const wa = (msg) => (C.contact.whatsapp ? `https://wa.me/${C.contact.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent(msg)}` : "");
 const tel = (C.contact.phone.replace(/\D/g, "").length === 10 ? "+1" : "+") + C.contact.phone.replace(/\D/g, "");
 const isPlaceholder = (s) => !s || /\[.*\]/.test(s);
@@ -124,13 +124,15 @@ const disclosure = () => t(
 
 function dealCard(d) {
   const tags = dealTags(d);
-  return `<article class="deal" data-type="${dealKey(d)}" data-price="${d.price || 0}"><a href="/off-market/${d.slug}/" class="deal-link">
-<p class="deal-meta">${dealType(d)}, ${esc(d.county ? d.county + " County" : d.city)}</p>
+  const ph = d.images?.[0];
+  return `<article class="deal${ph ? " has-img" : ""}" data-type="${dealKey(d)}" data-price="${d.price || 0}"><a href="/off-market/${d.slug}/" class="deal-link">
+${ph ? `<div class="deal-img"><img src="${esc(img(ph.src, 800))}" alt="${esc(ph.alt)}" loading="lazy" width="800" height="533"><span class="status">Off market</span></div>` : ""}
+<div class="deal-body"><p class="deal-meta">${dealType(d)}, ${esc(d.county ? d.county + " County" : d.city)}</p>
 <h3>${esc(d.address)}</h3><p class="deal-city">${esc(d.city)}, FL ${esc(d.zip)}</p>
 <p class="deal-price">${money(d.price)}</p>
 <p class="card-spec">${dealSpec(d)}</p>
 ${tags.length ? `<p class="deal-tags">${tags.map((x) => `<span>${x}</span>`).join("")}</p>` : ""}
-</a></article>`;
+</div></a></article>`;
 }
 
 function offMarketPage() {
@@ -181,6 +183,8 @@ function dealPage(d) {
 ${nav("/")}
 <main class="pp">
 <div class="wrap"><a href="/off-market/" class="back">${t("All off-market deals", "Todos los deals off market")}</a></div>
+${d.images?.length ? `<section class="wrap deal-photo"><figure class="pp-main"><img id="ppMain" src="${esc(img(d.images[0].src, 1800))}" alt="${esc(d.images[0].alt)}"></figure>
+${d.images.length > 1 ? `<div class="thumbs">${d.images.map((im, i) => `<button type="button" class="thumb" data-src="${esc(img(im.src, 1800))}" data-alt="${esc(im.alt)}" aria-label="Photo ${i + 1}"${i === 0 ? ' aria-current="true"' : ""}><img src="${esc(img(im.src, 300))}" alt=""></button>`).join("")}</div>` : ""}</section>` : ""}
 <section class="wrap pp-top deal-top">
 <div class="deal-sheet">
 <p class="card-type">${dealType(d)}, ${esc(d.county ? d.county + " County" : "")} <span class="status inline">Off market</span></p>

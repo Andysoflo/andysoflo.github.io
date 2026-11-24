@@ -1,17 +1,332 @@
 {
   "updatedAt": "2026-11-24T16:20:46.929Z",
   "deals": [
-    {"slug":"17720-sw-89th-ct-palmetto-bay-fl-33157","address":"17720 SW 89th Ct","city":"Palmetto Bay","zip":"33157","county":"Miami-Dade","type":"Single Family","beds":3,"baths":2,"sqft":1751,"lot":17859,"year":null,"pool":true,"parking":"2-car garage","extras":[],"notes":"Corner lot with a private pool and a private tennis court. 2-car garage. Excellent renovation potential. Clean, upscale neighborhood.","photos":"","price":816600},
-    {"slug":"11064-sunset-blvd-west-palm-beach-fl-33411","address":"11064 Sunset Blvd","city":"West Palm Beach","zip":"33411","county":"Palm Beach","type":"Single Family","beds":3,"baths":2,"sqft":1802,"lot":54450,"year":1987,"pool":false,"parking":"","extras":[{"label":"TENANT STATUS","value":"Seller 2-week post-occupancy"}],"notes":"3 bed / 2 bath wood-frame home on 1.25 acres in the southeast corner of The Acreage, with privacy trees around the perimeter. A/C 6 years old. Roof 18 years old. Seller to have a 2-week post-occupancy with a $20,000 escrow holdback and a $250/day holdover charge starting on the 15th day until vacant.","photos":"https://photos.app.goo.gl/ztg94FAJvmjfXyZB8","price":411900},
-    {"slug":"2501-nw-41st-ave-302-lauderhill-fl-33313","address":"2501 NW 41st Ave #302","city":"Lauderhill","zip":"33313","county":"Broward","type":"Condo","beds":1,"baths":1,"sqft":750,"lot":null,"year":null,"pool":false,"parking":"","extras":[],"notes":"Turnkey 1 bed / 1 bath condo in Lauderhill, updated in 2020. HOA $332/mo. Estimated rent $1,500/mo.","photos":"","price":83200},
-    {"slug":"3375-ne-15th-dr-107-homestead-fl-33033","address":"3375 NE 15th Dr #107","city":"Homestead","zip":"33033","county":"Miami-Dade","type":"Condo","beds":3,"baths":3,"sqft":1234,"lot":null,"year":null,"pool":false,"parking":"","extras":[{"label":"CLOSING","value":"December 11, 2026, or upon HOA approval, whichever comes first"},{"label":"REPAIRS NEEDED","value":"Light renovation (estimated rehab $10,000–$15,000)"}],"notes":"Spacious 3 bed / 3 bath condo in Homestead with 1,234 SF of living space. Minimal renovations needed (estimated rehab $10,000–$15,000). HOA $560/mo. Market rent $2,000–$2,300/mo. Easy access. Closing December 11, 2026, or upon HOA approval, whichever comes first.","photos":"https://drive.google.com/drive/folders/1doSGS7wACWvwg-_P8hEMIt0uDPq2w5qH","price":185300},
-    {"slug":"11331-sw-207th-dr-miami-fl-33189","address":"11331 SW 207th Dr","city":"Miami","zip":"33189","county":"Miami-Dade","type":"Multi-Family","beds":4,"baths":2,"sqft":1570,"lot":8100,"year":1971,"pool":false,"parking":"","extras":[],"notes":"Duplex (2 units) on an 8,100 SF lot.","photos":"","price":545900},
-    {"slug":"61xx-sw-xx-ct-miramar-fl-33023","address":"61xx SW xx Ct","city":"Miramar","zip":"33023","county":"Broward","type":"Single Family","beds":3,"baths":1,"sqft":1016,"lot":5005,"year":1954,"pool":false,"parking":"","extras":[],"notes":"Estimated rent $2,800–$3,000 per month.","photos":"","price":339800},
-    {"slug":"11801-sw-207th-st-miami-fl-33177","address":"11801 SW 207th St","city":"Miami","zip":"33177","county":"Miami-Dade","type":"Single Family","beds":3,"baths":2,"sqft":1832,"lot":10357,"year":1969,"pool":true,"parking":"","extras":[{"label":"RENTAL INCOME","value":"$4,100"},{"label":"TENANT STATUS","value":"Vacant at closing"},{"label":"REPAIRS NEEDED","value":"Cleanup and cosmetic renovation; A/C needs replacement; pool needs servicing"}],"notes":"Concrete block construction. Bonus room, laundry area, fenced backyard and pool with large patio deck. Roof approx. 12.5 years old and A/C approx. 13 years old per seller (A/C needs replacement); no permits found for either. Pergola and appliances do not convey. Public water and sewer. Not in a flood zone. Vacant at closing.","photos":"","price":463500},
-    {"slug":"3250-nw-14th-ter-miami-fl-33125","address":"3250 NW 14th Ter","city":"Miami","zip":"33125","county":"Miami-Dade","type":"Single Family","beds":4,"baths":3,"sqft":1897,"lot":5400,"year":1948,"pool":false,"parking":"","extras":[],"notes":"Income property: front 2/1 plus two 1/1 in-law units with private entrances. CBS construction. No HOA. Seller financing available.","photos":"","price":545800},
-    {"slug":"4871-nw-42nd-ct-lauderdale-lakes-fl-33319","address":"4871 NW 42nd Ct","city":"Lauderdale Lakes","zip":"33319","county":"Broward","type":"Single Family","beds":2,"baths":2,"sqft":1284,"lot":5522,"year":1970,"pool":false,"parking":"","extras":[],"notes":"Single-story CBS home in a 55+ community.","photos":"","price":267700},
-    {"slug":"17151-nw-42nd-pl-miami-gardens-fl-33055","address":"17151 NW 42nd Pl","city":"Miami Gardens","zip":"33055","county":"Miami-Dade","type":"Single Family","beds":3,"baths":2,"sqft":1222,"lot":7650,"year":1958,"pool":false,"parking":"","extras":[],"notes":"Single-story concrete block home on a 7,650 SF lot with room for improvements or expansion.","photos":"","price":504600},
-    {"slug":"145-nw-32nd-st-miami-fl-33127","address":"145 NW 32nd St","city":"Miami","zip":"33127","county":"Miami-Dade","type":"Multi-Family","beds":4,"baths":3,"sqft":1788,"lot":4350,"year":1925,"pool":false,"parking":"","extras":[{"label":"ZONING","value":"T4"}],"notes":"Wynwood Norte. Listed as a legal triplex: 2/1 + 1/1 + 1/1. T4 zoning under the Wynwood Norte plan.","photos":"","price":746000},
-    {"slug":"16461-nw-19th-ct-miami-gardens-fl-33054","address":"16461 NW 19th Ct","city":"Miami Gardens","zip":"33054","county":"Miami-Dade","type":"Single Family","beds":2,"baths":1,"sqft":720,"lot":9000,"year":1950,"pool":false,"parking":"","extras":[],"notes":"Concrete block home on a 9,000 SF lot with significant expansion potential (subject to permitting).","photos":"","price":339800}
+    {
+      "slug": "17720-sw-89th-ct-palmetto-bay-fl-33157",
+      "address": "17720 SW 89th Ct",
+      "city": "Palmetto Bay",
+      "zip": "33157",
+      "county": "Miami-Dade",
+      "type": "Single Family",
+      "beds": 3,
+      "baths": 2,
+      "sqft": 1751,
+      "lot": 17859,
+      "year": null,
+      "pool": true,
+      "parking": "2-car garage",
+      "extras": [],
+      "notes": "Corner lot with a private pool and a private tennis court. 2-car garage. Excellent renovation potential. Clean, upscale neighborhood.",
+      "photos": "",
+      "price": 816600,
+      "images": []
+    },
+    {
+      "slug": "11064-sunset-blvd-west-palm-beach-fl-33411",
+      "address": "11064 Sunset Blvd",
+      "city": "West Palm Beach",
+      "zip": "33411",
+      "county": "Palm Beach",
+      "type": "Single Family",
+      "beds": 3,
+      "baths": 2,
+      "sqft": 1802,
+      "lot": 54450,
+      "year": 1987,
+      "pool": false,
+      "parking": "",
+      "extras": [
+        {
+          "label": "TENANT STATUS",
+          "value": "Seller 2-week post-occupancy"
+        }
+      ],
+      "notes": "3 bed / 2 bath wood-frame home on 1.25 acres in the southeast corner of The Acreage, with privacy trees around the perimeter. A/C 6 years old. Roof 18 years old. Seller to have a 2-week post-occupancy with a $20,000 escrow holdback and a $250/day holdover charge starting on the 15th day until vacant.",
+      "photos": "https://photos.app.goo.gl/ztg94FAJvmjfXyZB8",
+      "price": 411900,
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795534949/11064-sunset-blvd-west-palm-beach.jpg",
+          "alt": "11064 Sunset Blvd, West Palm Beach, FL 33411"
+        }
+      ]
+    },
+    {
+      "slug": "2501-nw-41st-ave-302-lauderhill-fl-33313",
+      "address": "2501 NW 41st Ave #302",
+      "city": "Lauderhill",
+      "zip": "33313",
+      "county": "Broward",
+      "type": "Condo",
+      "beds": 1,
+      "baths": 1,
+      "sqft": 750,
+      "lot": null,
+      "year": null,
+      "pool": false,
+      "parking": "",
+      "extras": [],
+      "notes": "Turnkey 1 bed / 1 bath condo in Lauderhill, updated in 2020. HOA $332/mo. Estimated rent $1,500/mo.",
+      "photos": "",
+      "price": 83200,
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795528288/2501-nw-41st-ave-302-lauderhill.jpg",
+          "alt": "2501 NW 41st Ave #302, Lauderhill, FL 33313"
+        }
+      ]
+    },
+    {
+      "slug": "3375-ne-15th-dr-107-homestead-fl-33033",
+      "address": "3375 NE 15th Dr #107",
+      "city": "Homestead",
+      "zip": "33033",
+      "county": "Miami-Dade",
+      "type": "Condo",
+      "beds": 3,
+      "baths": 3,
+      "sqft": 1234,
+      "lot": null,
+      "year": null,
+      "pool": false,
+      "parking": "",
+      "extras": [
+        {
+          "label": "CLOSING",
+          "value": "December 11, 2026, or upon HOA approval, whichever comes first"
+        },
+        {
+          "label": "REPAIRS NEEDED",
+          "value": "Light renovation (estimated rehab $10,000–$15,000)"
+        }
+      ],
+      "notes": "Spacious 3 bed / 3 bath condo in Homestead with 1,234 SF of living space. Minimal renovations needed (estimated rehab $10,000–$15,000). HOA $560/mo. Market rent $2,000–$2,300/mo. Easy access. Closing December 11, 2026, or upon HOA approval, whichever comes first.",
+      "photos": "https://drive.google.com/drive/folders/1doSGS7wACWvwg-_P8hEMIt0uDPq2w5qH",
+      "price": 185300,
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795531594/3375-ne-15th-dr-107-homestead.jpg",
+          "alt": "3375 NE 15th Dr #107, Homestead, FL 33033"
+        }
+      ]
+    },
+    {
+      "slug": "11331-sw-207th-dr-miami-fl-33189",
+      "address": "11331 SW 207th Dr",
+      "city": "Miami",
+      "zip": "33189",
+      "county": "Miami-Dade",
+      "type": "Multi-Family",
+      "beds": 4,
+      "baths": 2,
+      "sqft": 1570,
+      "lot": 8100,
+      "year": 1971,
+      "pool": false,
+      "parking": "",
+      "extras": [],
+      "notes": "Duplex (2 units) on an 8,100 SF lot.",
+      "photos": "",
+      "price": 545900,
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795463196/11331-sw-207th-dr-miami.jpg",
+          "alt": "11331 SW 207th Dr, Miami, FL 33189"
+        }
+      ]
+    },
+    {
+      "slug": "61xx-sw-xx-ct-miramar-fl-33023",
+      "address": "61xx SW xx Ct",
+      "city": "Miramar",
+      "zip": "33023",
+      "county": "Broward",
+      "type": "Single Family",
+      "beds": 3,
+      "baths": 1,
+      "sqft": 1016,
+      "lot": 5005,
+      "year": 1954,
+      "pool": false,
+      "parking": "",
+      "extras": [],
+      "notes": "Estimated rent $2,800–$3,000 per month.",
+      "photos": "",
+      "price": 339800,
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795450478/61xx-sw-xx-ct-miramar.jpg",
+          "alt": "61xx SW xx Ct, Miramar, FL 33023"
+        }
+      ]
+    },
+    {
+      "slug": "11801-sw-207th-st-miami-fl-33177",
+      "address": "11801 SW 207th St",
+      "city": "Miami",
+      "zip": "33177",
+      "county": "Miami-Dade",
+      "type": "Single Family",
+      "beds": 3,
+      "baths": 2,
+      "sqft": 1832,
+      "lot": 10357,
+      "year": 1969,
+      "pool": true,
+      "parking": "",
+      "extras": [
+        {
+          "label": "RENTAL INCOME",
+          "value": "$4,100"
+        },
+        {
+          "label": "TENANT STATUS",
+          "value": "Vacant at closing"
+        },
+        {
+          "label": "REPAIRS NEEDED",
+          "value": "Cleanup and cosmetic renovation; A/C needs replacement; pool needs servicing"
+        }
+      ],
+      "notes": "Concrete block construction. Bonus room, laundry area, fenced backyard and pool with large patio deck. Roof approx. 12.5 years old and A/C approx. 13 years old per seller (A/C needs replacement); no permits found for either. Pergola and appliances do not convey. Public water and sewer. Not in a flood zone. Vacant at closing.",
+      "photos": "",
+      "price": 463500,
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795449389/11801-sw-207th-st-miami.jpg",
+          "alt": "11801 SW 207th St, Miami, FL 33177"
+        }
+      ]
+    },
+    {
+      "slug": "3250-nw-14th-ter-miami-fl-33125",
+      "address": "3250 NW 14th Ter",
+      "city": "Miami",
+      "zip": "33125",
+      "county": "Miami-Dade",
+      "type": "Single Family",
+      "beds": 4,
+      "baths": 3,
+      "sqft": 1897,
+      "lot": 5400,
+      "year": 1948,
+      "pool": false,
+      "parking": "",
+      "extras": [],
+      "notes": "Income property: front 2/1 plus two 1/1 in-law units with private entrances. CBS construction. No HOA. Seller financing available.",
+      "photos": "",
+      "price": 545800,
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795448231/3250-nw-14th-ter-miami.jpg",
+          "alt": "3250 NW 14th Ter, Miami, FL 33125"
+        }
+      ]
+    },
+    {
+      "slug": "4871-nw-42nd-ct-lauderdale-lakes-fl-33319",
+      "address": "4871 NW 42nd Ct",
+      "city": "Lauderdale Lakes",
+      "zip": "33319",
+      "county": "Broward",
+      "type": "Single Family",
+      "beds": 2,
+      "baths": 2,
+      "sqft": 1284,
+      "lot": 5522,
+      "year": 1970,
+      "pool": false,
+      "parking": "",
+      "extras": [],
+      "notes": "Single-story CBS home in a 55+ community.",
+      "photos": "",
+      "price": 267700,
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795448236/4871-nw-42nd-ct-lauderdale-lakes.jpg",
+          "alt": "4871 NW 42nd Ct, Lauderdale Lakes, FL 33319"
+        }
+      ]
+    },
+    {
+      "slug": "17151-nw-42nd-pl-miami-gardens-fl-33055",
+      "address": "17151 NW 42nd Pl",
+      "city": "Miami Gardens",
+      "zip": "33055",
+      "county": "Miami-Dade",
+      "type": "Single Family",
+      "beds": 3,
+      "baths": 2,
+      "sqft": 1222,
+      "lot": 7650,
+      "year": 1958,
+      "pool": false,
+      "parking": "",
+      "extras": [],
+      "notes": "Single-story concrete block home on a 7,650 SF lot with room for improvements or expansion.",
+      "photos": "",
+      "price": 504600,
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795448241/17151-nw-42nd-pl-miami-gardens.jpg",
+          "alt": "17151 NW 42nd Pl, Miami Gardens, FL 33055"
+        }
+      ]
+    },
+    {
+      "slug": "145-nw-32nd-st-miami-fl-33127",
+      "address": "145 NW 32nd St",
+      "city": "Miami",
+      "zip": "33127",
+      "county": "Miami-Dade",
+      "type": "Multi-Family",
+      "beds": 4,
+      "baths": 3,
+      "sqft": 1788,
+      "lot": 4350,
+      "year": 1925,
+      "pool": false,
+      "parking": "",
+      "extras": [
+        {
+          "label": "ZONING",
+          "value": "T4"
+        }
+      ],
+      "notes": "Wynwood Norte. Listed as a legal triplex: 2/1 + 1/1 + 1/1. T4 zoning under the Wynwood Norte plan.",
+      "photos": "",
+      "price": 746000,
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795448237/145-nw-32nd-st-miami.jpg",
+          "alt": "145 NW 32nd St, Miami, FL 33127"
+        }
+      ]
+    },
+    {
+      "slug": "16461-nw-19th-ct-miami-gardens-fl-33054",
+      "address": "16461 NW 19th Ct",
+      "city": "Miami Gardens",
+      "zip": "33054",
+      "county": "Miami-Dade",
+      "type": "Single Family",
+      "beds": 2,
+      "baths": 1,
+      "sqft": 720,
+      "lot": 9000,
+      "year": 1950,
+      "pool": false,
+      "parking": "",
+      "extras": [],
+      "notes": "Concrete block home on a 9,000 SF lot with significant expansion potential (subject to permitting).",
+      "photos": "",
+      "price": 339800,
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795448234/16461-nw-19th-ct-miami-gardens.jpg",
+          "alt": "16461 NW 19th Ct, Miami Gardens, FL 33054"
+        }
+      ]
+    }
   ]
 }
