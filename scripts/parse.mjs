@@ -132,3 +132,88 @@ export function projectUrlsFromSitemap(xml, base) {
     .map((m) => decode(m[1]))
     .filter((u) => new URL(u, base).pathname.startsWith("/projects/"));
 }
+
+// ---------------- Off market (fichas de deals) ----------------
+
+// Enlaces a fichas desde la página de listado.
+export function dealUrlsFromListing(html, base) {
+  const out = new Set();
+  for (const m of html.matchAll(/href="\.?\/?(deals\/[^"#?]+)"/g)) out.add(new URL("/" + m[1], base).href);
+  return [...out];
+}
+
+const DEAL_LABELS = {
+  "BED / BATH": "bedbath",
+  "LIVING AREA (SF)": "sqft",
+  "LOT SIZE (SF)": "lot",
+  "YEAR BUILT": "year",
+  "POOL": "pool",
+  "PARKING": "parking",
+};
+// Etiquetas de "Investment details" que se muestran tal cual (inglés → español).
+export const DEAL_EXTRA_ES = {
+  "TENANT STATUS": "Ocupación",
+  "RENTAL INCOME": "Renta de mercado",
+  "CLOSING": "Cierre",
+  "REPAIRS NEEDED": "Reparaciones",
+  "ZONING": "Zonificación",
+  "ARV": "ARV",
+  "ESTIMATED REHAB": "Rehab estimado",
+  "HOA": "HOA",
+};
+const SECTION_HEADS = new Set(["KEY PROPERTY INFORMATION", "INVESTMENT DETAILS", "DEAL INFORMATION", "NOTES"]);
+const isLabel = (s) => s.length <= 40 && s === s.toUpperCase() && /[A-Z]/.test(s) && !/^\$/.test(s);
+
+export function parseDeal(html, url) {
+  const chunks = textChunks(html);
+  const title = decode((html.match(/<title>([^<|]*)/) || [])[1] || "").trim();
+  const back = chunks.findIndex((c) => /BACK TO DEALS/i.test(c));
+  const start = chunks.indexOf(title, Math.max(0, back));
+  const end = chunks.findIndex((c, i) => i > start && /^READY-TO-SHARE/i.test(c));
+  const core = chunks.slice(start, end > start ? end : undefined);
+  const priceChunk = core.find((c) => /^\$[\d,]+$/.test(c));
+  const share = chunks.slice(end).find((c) => /Type:/.test(c)) || "";
+
+  const facts = {};
+  const extras = [];
+  let notes = "";
+  for (let i = 0; i < core.length; i++) {
+    const c = core[i];
+    if (!isLabel(c) || SECTION_HEADS.has(c) && c !== "NOTES") continue;
+    const next = core[i + 1];
+    if (next == null || isLabel(next)) continue;
+    if (c === "NOTES") { notes = next; i++; continue; }
+    if (DEAL_LABELS[c]) facts[DEAL_LABELS[c]] = next;
+    else extras.push({ label: c, value: next });
+    i++;
+  }
+
+  const m = title.match(/^(.*?),\s*([^,]+),\s*FL\s*(\d{5})?/);
+  const bb = (facts.bedbath || "").match(/(\d+(?:\.\d)?)\s*Bed\D+(\d+(?:\.\d)?)\s*Bath/i);
+  const n0 = (v) => { const x = parseFloat(String(v ?? "").replace(/[^0-9.]/g, "")); return Number.isFinite(x) ? x : null; };
+  return {
+    slug: url.replace(/\/+$/, "").split("/").pop(),
+    address: m ? m[1].trim() : title,
+    city: m ? m[2].trim() : "",
+    zip: m?.[3] || "",
+    county: (share.match(/County:\s*([A-Za-z .-]+?)\s+(?:📍|Address:)/) || [])[1]?.trim() || "",
+    type: (share.match(/Type:\s*([A-Za-z -]+?)\s+(?:🌎|County:)/) || [])[1]?.trim() || "",
+    sourcePrice: n0(priceChunk),
+    beds: bb ? +bb[1] : null,
+    baths: bb ? +bb[2] : null,
+    sqft: n0(facts.sqft),
+    lot: n0(facts.lot),
+    year: facts.year ? +String(facts.year).replace(/\D/g, "") || null : null,
+    pool: facts.pool ? /^y/i.test(facts.pool) : null,
+    parking: facts.parking || "",
+    extras,
+    notes,
+    photos: (share.match(/Photos:\s*(https:\/\/\S+)/) || [])[1] || "",
+  };
+}
+
+// Margen por tramos según el precio original. tiers: [{ upTo: 150000, pct: 4 }, { upTo: 600000, pct: 3 }, { upTo: null, pct: 2.2 }]
+export function applyMarkup(price, tiers) {
+  const tier = tiers.find((t) => t.upTo == null || price < t.upTo);
+  return Math.ceil((price * (1 + tier.pct / 100)) / 100) * 100;
+}
