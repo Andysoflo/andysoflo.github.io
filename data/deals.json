@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T17:18:42.369Z",
+  "updatedAt": "2026-11-25T19:16:31.239Z",
   "deals": [
     {
       "slug": "4165-nw-90th-ave-coral-springs-fl-33065",
@@ -266,56 +266,6 @@
         }
       ],
       "price": 463500
-    },
-    {
-      "slug": "3250-nw-14th-ter-miami-fl-33125",
-      "address": "3250 NW 14th Ter",
-      "city": "Miami",
-      "zip": "33125",
-      "county": "Miami-Dade",
-      "type": "Single Family",
-      "beds": 4,
-      "baths": 3,
-      "sqft": 1897,
-      "lot": 5400,
-      "year": 1948,
-      "pool": false,
-      "parking": "",
-      "extras": [],
-      "notes": "Income property: front 2/1 plus two 1/1 in-law units with private entrances. CBS construction. No HOA. Seller financing available.",
-      "photos": "",
-      "images": [
-        {
-          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795448231/3250-nw-14th-ter-miami.jpg",
-          "alt": "3250 NW 14th Ter, Miami, FL 33125"
-        }
-      ],
-      "price": 545800
-    },
-    {
-      "slug": "4871-nw-42nd-ct-lauderdale-lakes-fl-33319",
-      "address": "4871 NW 42nd Ct",
-      "city": "Lauderdale Lakes",
-      "zip": "33319",
-      "county": "Broward",
-      "type": "Single Family",
-      "beds": 2,
-      "baths": 2,
-      "sqft": 1284,
-      "lot": 5522,
-      "year": 1970,
-      "pool": false,
-      "parking": "",
-      "extras": [],
-      "notes": "Single-story CBS home in a 55+ community.",
-      "photos": "",
-      "images": [
-        {
-          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795448236/4871-nw-42nd-ct-lauderdale-lakes.jpg",
-          "alt": "4871 NW 42nd Ct, Lauderdale Lakes, FL 33319"
-        }
-      ],
-      "price": 267700
     }
   ]
 }
