@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T21:13:04.642Z",
+  "updatedAt": "2026-11-25T17:18:42.369Z",
   "deals": [
     {
       "slug": "4165-nw-90th-ave-coral-springs-fl-33065",
@@ -316,31 +316,6 @@
         }
       ],
       "price": 267700
-    },
-    {
-      "slug": "17151-nw-42nd-pl-miami-gardens-fl-33055",
-      "address": "17151 NW 42nd Pl",
-      "city": "Miami Gardens",
-      "zip": "33055",
-      "county": "Miami-Dade",
-      "type": "Single Family",
-      "beds": 3,
-      "baths": 2,
-      "sqft": 1222,
-      "lot": 7650,
-      "year": 1958,
-      "pool": false,
-      "parking": "",
-      "extras": [],
-      "notes": "Single-story concrete block home on a 7,650 SF lot with room for improvements or expansion.",
-      "photos": "",
-      "images": [
-        {
-          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795448241/17151-nw-42nd-pl-miami-gardens.jpg",
-          "alt": "17151 NW 42nd Pl, Miami Gardens, FL 33055"
-        }
-      ],
-      "price": 504600
     }
   ]
 }
