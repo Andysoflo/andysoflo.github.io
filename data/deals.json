@@ -1,6 +1,36 @@
 {
-  "updatedAt": "2026-11-25T20:16:54.763Z",
+  "updatedAt": "2026-11-25T21:20:59.353Z",
   "deals": [
+    {
+      "slug": "15xx-harrison-st-hollywood-fl-33020",
+      "address": "15XX Harrison St",
+      "city": "Hollywood",
+      "zip": "33020",
+      "county": "Broward",
+      "type": "Single Family",
+      "beds": 3,
+      "baths": 3,
+      "sqft": 1637,
+      "lot": 5122,
+      "year": null,
+      "pool": false,
+      "parking": "Access from Harrison St or the back alley",
+      "extras": [
+        {
+          "label": "TENANT STATUS",
+          "value": "Vacant at closing"
+        }
+      ],
+      "notes": "Good condition. Each room has its own entrance, great for Airbnb or rental income. Garage converted to a 1/1. CBS construction, tile roof, 60% impact windows. Fully fenced lot with room for a pool; access from Harrison St or the back alley. Minutes from Hollywood Beach and Young Circle. No HOA. Clean title. Buyer pays seller's closing costs. Vacant at closing.",
+      "photos": "",
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795634809/15xx-harrison-st-hollywood.jpg",
+          "alt": "15XX Harrison St, Hollywood, FL 33020"
+        }
+      ],
+      "price": 592200
+    },
     {
       "slug": "6601-sw-6th-st-pembroke-pines-fl-33023",
       "address": "6601 SW 6th St",
@@ -25,6 +55,44 @@
         }
       ],
       "price": 494300
+    },
+    {
+      "slug": "161-w-64th-st-hialeah-fl-33012",
+      "address": "161 W 64th St",
+      "city": "Hialeah",
+      "zip": "33012",
+      "county": "Miami-Dade",
+      "type": "Single Family",
+      "beds": 3,
+      "baths": 2,
+      "sqft": 1125,
+      "lot": 6480,
+      "year": 1953,
+      "pool": false,
+      "parking": "Garage",
+      "extras": [
+        {
+          "label": "CLOSING",
+          "value": "December 8"
+        },
+        {
+          "label": "TENANT STATUS",
+          "value": "Seller post-occupancy for 60 days after closing ($10,000 escrow holdback)"
+        },
+        {
+          "label": "REPAIRS NEEDED",
+          "value": "Needs new roof and cosmetic updates"
+        }
+      ],
+      "notes": "Fix-and-flip opportunity in central Hialeah, walking distance to Amelia Earhart Park. Functional 3/2 layout with garage and spacious backyard. Solid bones; needs new roof and cosmetic updates. Clean and marketable title. Buyer to waive certificate of re-occupancy. 60-day post-occupancy with $10,000 escrow holdback. Closing December 8.",
+      "photos": "https://drive.google.com/drive/u/3/folders/1guxP6TlfXMXoS2ZzpZjLNc_440o_65qZ",
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795634540/161-w-64th-st-hialeah.jpg",
+          "alt": "161 W 64th St, Hialeah, FL 33012"
+        }
+      ],
+      "price": 458400
     },
     {
       "slug": "345-ne-129th-st-north-miami-fl-33161",
@@ -80,6 +148,48 @@
         }
       ],
       "price": 858400
+    },
+    {
+      "slug": "1869-nw-flagler-ter-miami-fl-33125",
+      "address": "1869 NW Flagler Ter",
+      "city": "Miami",
+      "zip": "33125",
+      "county": "Miami-Dade",
+      "type": "Multi-Family",
+      "beds": 4,
+      "baths": 4,
+      "sqft": 1568,
+      "lot": 4445,
+      "year": null,
+      "pool": false,
+      "parking": "4 on-site spots plus street parking",
+      "extras": [
+        {
+          "label": "RENTAL INCOME",
+          "value": "$2,000"
+        },
+        {
+          "label": "TENANT STATUS",
+          "value": "Front unit: month-to-month at $2,000/mo ($2,000 deposit), buyer to assume. Back unit: vacant at close."
+        },
+        {
+          "label": "REPAIRS NEEDED",
+          "value": "Needs interior rehab and exterior refresh"
+        },
+        {
+          "label": "VIOLATIONS",
+          "value": "None reported"
+        }
+      ],
+      "notes": "Little Havana duplex (2/2 + 2/2). New roof and impact windows & doors, both permitted. Mini-split A/C throughout. Separate water and electric meters. 4 on-site parking spots plus street parking. Needs interior rehab and exterior refresh. Front unit rented month-to-month at $2,000/mo (buyer to assume); back unit vacant at close. No HOA. No liens or violations reported. 4/2 per county.",
+      "photos": "https://drive.google.com/drive/folders/168J7HiW3S9vOVgzRvFHrd4IAjCW1OeFT?usp=sharing",
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795627924/1869-nw-flagler-ter-miami.jpg",
+          "alt": "1869 NW Flagler Ter, Miami, FL 33125"
+        }
+      ],
+      "price": 565500
     },
     {
       "slug": "915-rutland-st-opa-locka-fl-33054",
