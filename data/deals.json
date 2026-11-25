@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T21:20:59.353Z",
+  "updatedAt": "2026-11-25T23:12:17.186Z",
   "deals": [
     {
       "slug": "15xx-harrison-st-hollywood-fl-33020",
@@ -122,7 +122,7 @@
           "alt": "345 NE 129th St, North Miami, FL 33161"
         }
       ],
-      "price": 545800
+      "price": 540700
     },
     {
       "slug": "5930-sw-44th-ter-miami-fl-33155",
@@ -251,36 +251,6 @@
       "price": 119500
     },
     {
-      "slug": "18812-nw-32nd-ct-miami-gardens-fl-33056",
-      "address": "18812 NW 32nd Ct",
-      "city": "Miami Gardens",
-      "zip": "33056",
-      "county": "Miami-Dade",
-      "type": "Single Family",
-      "beds": 3,
-      "baths": 1,
-      "sqft": 1107,
-      "lot": 8500,
-      "year": null,
-      "pool": false,
-      "parking": "",
-      "extras": [
-        {
-          "label": "REPAIRS NEEDED",
-          "value": "Estimated repairs $50,000"
-        }
-      ],
-      "notes": "3 bed / 1 bath single-family home in Miami Gardens on an 8,500 SF lot. Estimated repairs $50,000.",
-      "photos": "",
-      "images": [
-        {
-          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795545686/18812-nw-32nd-ct-miami-gardens.jpg",
-          "alt": "18812 NW 32nd Ct, Miami Gardens, FL 33056"
-        }
-      ],
-      "price": 432500
-    },
-    {
       "slug": "17720-sw-89th-ct-palmetto-bay-fl-33157",
       "address": "17720 SW 89th Ct",
       "city": "Palmetto Bay",
@@ -359,6 +329,40 @@
         }
       ],
       "price": 83200
+    },
+    {
+      "slug": "3375-ne-15th-dr-107-homestead-fl-33033",
+      "address": "3375 NE 15th Dr #107",
+      "city": "Homestead",
+      "zip": "33033",
+      "county": "Miami-Dade",
+      "type": "Condo",
+      "beds": 3,
+      "baths": 3,
+      "sqft": 1234,
+      "lot": null,
+      "year": null,
+      "pool": false,
+      "parking": "",
+      "extras": [
+        {
+          "label": "CLOSING",
+          "value": "December 11, 2026, or upon HOA approval, whichever comes first"
+        },
+        {
+          "label": "REPAIRS NEEDED",
+          "value": "Light renovation (estimated rehab $10,000–$15,000)"
+        }
+      ],
+      "notes": "Spacious 3 bed / 3 bath condo in Homestead with 1,234 SF of living space. Minimal renovations needed (estimated rehab $10,000–$15,000). HOA $560/mo. Market rent $2,000–$2,300/mo. Easy access. Closing December 11, 2026, or upon HOA approval, whichever comes first.",
+      "photos": "https://drive.google.com/drive/folders/1doSGS7wACWvwg-_P8hEMIt0uDPq2w5qH",
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795531594/3375-ne-15th-dr-107-homestead.jpg",
+          "alt": "3375 NE 15th Dr #107, Homestead, FL 33033"
+        }
+      ],
+      "price": 185300
     }
   ]
 }
