@@ -1,6 +1,111 @@
 {
-  "updatedAt": "2026-11-25T19:16:31.239Z",
+  "updatedAt": "2026-11-25T20:16:54.763Z",
   "deals": [
+    {
+      "slug": "6601-sw-6th-st-pembroke-pines-fl-33023",
+      "address": "6601 SW 6th St",
+      "city": "Pembroke Pines",
+      "zip": "33023",
+      "county": "Broward",
+      "type": "Single Family",
+      "beds": 3,
+      "baths": 2,
+      "sqft": 1148,
+      "lot": 7923,
+      "year": 1961,
+      "pool": true,
+      "parking": "",
+      "extras": [],
+      "notes": "CBS construction. Pool. 1,562 SF per county.",
+      "photos": "",
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795634637/6601-sw-6th-st-pembroke-pines.jpg",
+          "alt": "6601 SW 6th St, Pembroke Pines, FL 33023"
+        }
+      ],
+      "price": 494300
+    },
+    {
+      "slug": "345-ne-129th-st-north-miami-fl-33161",
+      "address": "345 NE 129th St",
+      "city": "North Miami",
+      "zip": "33161",
+      "county": "Miami-Dade",
+      "type": "Single Family",
+      "beds": 3,
+      "baths": 2,
+      "sqft": 2376,
+      "lot": 9888,
+      "year": null,
+      "pool": false,
+      "parking": "",
+      "extras": [
+        {
+          "label": "REPAIRS NEEDED",
+          "value": "Estimated $80K+ (outdated interior)"
+        }
+      ],
+      "notes": "Outdated interior with potential to convert to a 4 Bed / 3 Bath within the existing footprint, subject to permits and layout verification. Estimated repairs: $80K+. Potential market rent: $5,000/month.",
+      "photos": "",
+      "images": [
+        {
+          "src": "https://i.imgur.com/aVn8HxJ.jpeg",
+          "alt": "345 NE 129th St, North Miami, FL 33161"
+        }
+      ],
+      "price": 545800
+    },
+    {
+      "slug": "5930-sw-44th-ter-miami-fl-33155",
+      "address": "5930 SW 44th Ter",
+      "city": "Miami",
+      "zip": "33155",
+      "county": "Miami-Dade",
+      "type": "Single Family",
+      "beds": 6,
+      "baths": 2,
+      "sqft": 2138,
+      "lot": 7125,
+      "year": 1948,
+      "pool": false,
+      "parking": "",
+      "extras": [],
+      "notes": "Great potential for a luxury renovation in one of Miami's most desirable neighborhoods. 3/1 per county.",
+      "photos": "https://photos.app.goo.gl/gNZS3zbSJHUyZtQ6A",
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795628084/5930-sw-44th-ter-miami.jpg",
+          "alt": "5930 SW 44th Ter, Miami, FL 33155"
+        }
+      ],
+      "price": 858400
+    },
+    {
+      "slug": "915-rutland-st-opa-locka-fl-33054",
+      "address": "915 Rutland St",
+      "city": "Opa-Locka",
+      "zip": "33054",
+      "county": "Miami-Dade",
+      "type": "Single Family",
+      "beds": 3,
+      "baths": 2,
+      "sqft": 1504,
+      "lot": 8712,
+      "year": null,
+      "pool": false,
+      "parking": "",
+      "extras": [],
+      "notes": "Move-in ready, very clean. Updated kitchen, tile flooring. 9-year-old roof, 2-year-old AC, 3-year-old water heater. Showing by appointment. 1,552 SF per county.",
+      "photos": "",
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795621492/915-rutland-st-opa-locka.jpg",
+          "alt": "915 Rutland St, Opa-Locka, FL 33054"
+        }
+      ],
+      "price": 442900
+    },
     {
       "slug": "4165-nw-90th-ave-coral-springs-fl-33065",
       "address": "4165 NW 90th Ave",
@@ -144,128 +249,6 @@
         }
       ],
       "price": 83200
-    },
-    {
-      "slug": "3375-ne-15th-dr-107-homestead-fl-33033",
-      "address": "3375 NE 15th Dr #107",
-      "city": "Homestead",
-      "zip": "33033",
-      "county": "Miami-Dade",
-      "type": "Condo",
-      "beds": 3,
-      "baths": 3,
-      "sqft": 1234,
-      "lot": null,
-      "year": null,
-      "pool": false,
-      "parking": "",
-      "extras": [
-        {
-          "label": "CLOSING",
-          "value": "December 11, 2026, or upon HOA approval, whichever comes first"
-        },
-        {
-          "label": "REPAIRS NEEDED",
-          "value": "Light renovation (estimated rehab $10,000–$15,000)"
-        }
-      ],
-      "notes": "Spacious 3 bed / 3 bath condo in Homestead with 1,234 SF of living space. Minimal renovations needed (estimated rehab $10,000–$15,000). HOA $560/mo. Market rent $2,000–$2,300/mo. Easy access. Closing December 11, 2026, or upon HOA approval, whichever comes first.",
-      "photos": "https://drive.google.com/drive/folders/1doSGS7wACWvwg-_P8hEMIt0uDPq2w5qH",
-      "images": [
-        {
-          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795531594/3375-ne-15th-dr-107-homestead.jpg",
-          "alt": "3375 NE 15th Dr #107, Homestead, FL 33033"
-        }
-      ],
-      "price": 185300
-    },
-    {
-      "slug": "11331-sw-207th-dr-miami-fl-33189",
-      "address": "11331 SW 207th Dr",
-      "city": "Miami",
-      "zip": "33189",
-      "county": "Miami-Dade",
-      "type": "Multi-Family",
-      "beds": 4,
-      "baths": 2,
-      "sqft": 1570,
-      "lot": 8100,
-      "year": 1971,
-      "pool": false,
-      "parking": "",
-      "extras": [],
-      "notes": "Duplex (2 units) on an 8,100 SF lot.",
-      "photos": "",
-      "images": [
-        {
-          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795463196/11331-sw-207th-dr-miami.jpg",
-          "alt": "11331 SW 207th Dr, Miami, FL 33189"
-        }
-      ],
-      "price": 545900
-    },
-    {
-      "slug": "61xx-sw-xx-ct-miramar-fl-33023",
-      "address": "61xx SW xx Ct",
-      "city": "Miramar",
-      "zip": "33023",
-      "county": "Broward",
-      "type": "Single Family",
-      "beds": 3,
-      "baths": 1,
-      "sqft": 1016,
-      "lot": 5005,
-      "year": 1954,
-      "pool": false,
-      "parking": "",
-      "extras": [],
-      "notes": "Estimated rent $2,800–$3,000 per month.",
-      "photos": "",
-      "images": [
-        {
-          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795450478/61xx-sw-xx-ct-miramar.jpg",
-          "alt": "61xx SW xx Ct, Miramar, FL 33023"
-        }
-      ],
-      "price": 339800
-    },
-    {
-      "slug": "11801-sw-207th-st-miami-fl-33177",
-      "address": "11801 SW 207th St",
-      "city": "Miami",
-      "zip": "33177",
-      "county": "Miami-Dade",
-      "type": "Single Family",
-      "beds": 3,
-      "baths": 2,
-      "sqft": 1832,
-      "lot": 10357,
-      "year": 1969,
-      "pool": true,
-      "parking": "",
-      "extras": [
-        {
-          "label": "RENTAL INCOME",
-          "value": "$4,100"
-        },
-        {
-          "label": "TENANT STATUS",
-          "value": "Vacant at closing"
-        },
-        {
-          "label": "REPAIRS NEEDED",
-          "value": "Cleanup and cosmetic renovation; A/C needs replacement; pool needs servicing"
-        }
-      ],
-      "notes": "Concrete block construction. Bonus room, laundry area, fenced backyard and pool with large patio deck. Roof approx. 12.5 years old and A/C approx. 13 years old per seller (A/C needs replacement); no permits found for either. Pergola and appliances do not convey. Public water and sewer. Not in a flood zone. Vacant at closing.",
-      "photos": "",
-      "images": [
-        {
-          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795449389/11801-sw-207th-st-miami.jpg",
-          "alt": "11801 SW 207th St, Miami, FL 33177"
-        }
-      ],
-      "price": 463500
     }
   ]
 }
