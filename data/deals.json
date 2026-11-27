@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T19:19:17.493Z",
+  "updatedAt": "2026-11-27T21:14:59.722Z",
   "deals": [
     {
       "slug": "11010-sw-165th-ter-miami-fl-33157",
@@ -265,95 +265,6 @@
         }
       ],
       "price": 442900
-    },
-    {
-      "slug": "4165-nw-90th-ave-coral-springs-fl-33065",
-      "address": "4165 NW 90th Ave",
-      "city": "Coral Springs",
-      "zip": "33065",
-      "county": "Broward",
-      "type": "Condo",
-      "beds": 2,
-      "baths": 1,
-      "sqft": 850,
-      "lot": null,
-      "year": null,
-      "pool": false,
-      "parking": "",
-      "extras": [
-        {
-          "label": "TENANT STATUS",
-          "value": "Vacant"
-        },
-        {
-          "label": "REPAIRS NEEDED",
-          "value": "Paint, stove and refrigerator needed. Original bathroom."
-        }
-      ],
-      "notes": "First-floor corner 2 bed / 1 bath condo in Ramblewood East, an all-ages community. Kitchen updated in 2010; original bathroom; tile floors in decent shape. Needs paint, a stove and a refrigerator. HOA $290/mo. The community has a one-year waiting period before renting. Amenities: four pools (one heated), two clubhouses, a tennis court and a game room. Vacant.",
-      "photos": "",
-      "images": [
-        {
-          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795546495/4165-nw-90th-ave-coral-springs.jpg",
-          "alt": "4165 NW 90th Ave, Coral Springs, FL 33065"
-        }
-      ],
-      "price": 119500
-    },
-    {
-      "slug": "17720-sw-89th-ct-palmetto-bay-fl-33157",
-      "address": "17720 SW 89th Ct",
-      "city": "Palmetto Bay",
-      "zip": "33157",
-      "county": "Miami-Dade",
-      "type": "Single Family",
-      "beds": 3,
-      "baths": 2,
-      "sqft": 1751,
-      "lot": 17859,
-      "year": null,
-      "pool": true,
-      "parking": "2-car garage",
-      "extras": [],
-      "notes": "Corner lot with a private pool and a private tennis court. 2-car garage. Excellent renovation potential. Clean, upscale neighborhood.",
-      "photos": "",
-      "images": [
-        {
-          "src": "https://i.imgur.com/NLD8G90.jpeg",
-          "alt": "17720 SW 89th Ct, Palmetto Bay, FL 33157"
-        }
-      ],
-      "price": 816600
-    },
-    {
-      "slug": "11064-sunset-blvd-west-palm-beach-fl-33411",
-      "address": "11064 Sunset Blvd",
-      "city": "West Palm Beach",
-      "zip": "33411",
-      "county": "Palm Beach",
-      "type": "Single Family",
-      "beds": 3,
-      "baths": 2,
-      "sqft": 1802,
-      "lot": 54450,
-      "year": 1987,
-      "pool": false,
-      "parking": "",
-      "extras": [
-        {
-          "label": "TENANT STATUS",
-          "value": "Seller 2-week post-occupancy"
-        }
-      ],
-      "notes": "3 bed / 2 bath wood-frame home on 1.25 acres in the southeast corner of The Acreage, with privacy trees around the perimeter. A/C 6 years old. Roof 18 years old. Seller to have a 2-week post-occupancy with a $20,000 escrow holdback and a $250/day holdover charge starting on the 15th day until vacant.",
-      "photos": "https://photos.app.goo.gl/ztg94FAJvmjfXyZB8",
-      "images": [
-        {
-          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795534949/11064-sunset-blvd-west-palm-beach.jpg",
-          "alt": "11064 Sunset Blvd, West Palm Beach, FL 33411"
-        }
-      ],
-      "price": 411900
     }
   ]
 }
