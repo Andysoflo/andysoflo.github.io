@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T23:12:17.186Z",
+  "updatedAt": "2026-11-27T17:25:28.049Z",
   "deals": [
     {
       "slug": "15xx-harrison-st-hollywood-fl-33020",
@@ -304,65 +304,6 @@
         }
       ],
       "price": 411900
-    },
-    {
-      "slug": "2501-nw-41st-ave-302-lauderhill-fl-33313",
-      "address": "2501 NW 41st Ave #302",
-      "city": "Lauderhill",
-      "zip": "33313",
-      "county": "Broward",
-      "type": "Condo",
-      "beds": 1,
-      "baths": 1,
-      "sqft": 750,
-      "lot": null,
-      "year": null,
-      "pool": false,
-      "parking": "",
-      "extras": [],
-      "notes": "Turnkey 1 bed / 1 bath condo in Lauderhill, updated in 2020. HOA $332/mo. Estimated rent $1,500/mo.",
-      "photos": "",
-      "images": [
-        {
-          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795528288/2501-nw-41st-ave-302-lauderhill.jpg",
-          "alt": "2501 NW 41st Ave #302, Lauderhill, FL 33313"
-        }
-      ],
-      "price": 83200
-    },
-    {
-      "slug": "3375-ne-15th-dr-107-homestead-fl-33033",
-      "address": "3375 NE 15th Dr #107",
-      "city": "Homestead",
-      "zip": "33033",
-      "county": "Miami-Dade",
-      "type": "Condo",
-      "beds": 3,
-      "baths": 3,
-      "sqft": 1234,
-      "lot": null,
-      "year": null,
-      "pool": false,
-      "parking": "",
-      "extras": [
-        {
-          "label": "CLOSING",
-          "value": "December 11, 2026, or upon HOA approval, whichever comes first"
-        },
-        {
-          "label": "REPAIRS NEEDED",
-          "value": "Light renovation (estimated rehab $10,000–$15,000)"
-        }
-      ],
-      "notes": "Spacious 3 bed / 3 bath condo in Homestead with 1,234 SF of living space. Minimal renovations needed (estimated rehab $10,000–$15,000). HOA $560/mo. Market rent $2,000–$2,300/mo. Easy access. Closing December 11, 2026, or upon HOA approval, whichever comes first.",
-      "photos": "https://drive.google.com/drive/folders/1doSGS7wACWvwg-_P8hEMIt0uDPq2w5qH",
-      "images": [
-        {
-          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795531594/3375-ne-15th-dr-107-homestead.jpg",
-          "alt": "3375 NE 15th Dr #107, Homestead, FL 33033"
-        }
-      ],
-      "price": 185300
     }
   ]
 }
