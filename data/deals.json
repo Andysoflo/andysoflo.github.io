@@ -1,6 +1,56 @@
 {
-  "updatedAt": "2026-11-27T17:25:28.049Z",
+  "updatedAt": "2026-11-27T19:19:17.493Z",
   "deals": [
+    {
+      "slug": "11010-sw-165th-ter-miami-fl-33157",
+      "address": "11010 SW 165th Ter",
+      "city": "Miami",
+      "zip": "33157",
+      "county": "Miami-Dade",
+      "type": "Single Family",
+      "beds": 4,
+      "baths": 2,
+      "sqft": 1536,
+      "lot": 7517,
+      "year": null,
+      "pool": false,
+      "parking": "Garage",
+      "extras": [],
+      "notes": "",
+      "photos": "",
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795799952/11010-sw-165th-ter-miami.jpg",
+          "alt": "11010 SW 165th Ter, Miami, FL 33157"
+        }
+      ],
+      "price": 525300
+    },
+    {
+      "slug": "18410-nw-42nd-ave-miami-gardens-fl-33055",
+      "address": "18410 NW 42nd Ave",
+      "city": "Miami Gardens",
+      "zip": "33055",
+      "county": "Miami-Dade",
+      "type": "Single Family",
+      "beds": 3,
+      "baths": 1,
+      "sqft": 1306,
+      "lot": 8250,
+      "year": null,
+      "pool": false,
+      "parking": "",
+      "extras": [],
+      "notes": "Easy to add a 2nd bathroom. Vacant, easy to show.",
+      "photos": "",
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795797295/18410-nw-42nd-ave-miami-gardens.jpg",
+          "alt": "18410 NW 42nd Ave, Miami Gardens, FL 33055"
+        }
+      ],
+      "price": 400700
+    },
     {
       "slug": "15xx-harrison-st-hollywood-fl-33020",
       "address": "15XX Harrison St",
