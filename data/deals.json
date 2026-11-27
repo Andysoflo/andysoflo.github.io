@@ -1,6 +1,86 @@
 {
-  "updatedAt": "2026-11-27T21:14:59.722Z",
+  "updatedAt": "2026-11-27T22:17:32.243Z",
   "deals": [
+    {
+      "slug": "12450-nw-13th-ave-north-miami-fl-33167",
+      "address": "12450 NW 13th Ave",
+      "city": "North Miami",
+      "zip": "33167",
+      "county": "Miami-Dade",
+      "type": "Single Family",
+      "beds": 2,
+      "baths": 1,
+      "sqft": 720,
+      "lot": 8740,
+      "year": null,
+      "pool": false,
+      "parking": "",
+      "extras": [
+        {
+          "label": "TENANT STATUS",
+          "value": "Tenant occupied"
+        }
+      ],
+      "notes": "Tenant occupied. Access by appointment.",
+      "photos": "",
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795813619/12450-nw-13th-ave-north-miami.jpg",
+          "alt": "12450 NW 13th Ave, North Miami, FL 33167"
+        }
+      ],
+      "price": 360400
+    },
+    {
+      "slug": "2931-sw-19th-ter-miami-fl-33145",
+      "address": "2931 SW 19th Ter",
+      "city": "Miami",
+      "zip": "33145",
+      "county": "Miami-Dade",
+      "type": "Multi-Family",
+      "beds": 3,
+      "baths": 2,
+      "sqft": 1291,
+      "lot": 5500,
+      "year": null,
+      "pool": false,
+      "parking": "",
+      "extras": [],
+      "notes": "2 units.",
+      "photos": "",
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795813640/2931-sw-19th-ter-miami.jpg",
+          "alt": "2931 SW 19th Ter, Miami, FL 33145"
+        }
+      ],
+      "price": 715300
+    },
+    {
+      "slug": "145-nw-32nd-st-miami-fl-33127",
+      "address": "145 NW 32nd St",
+      "city": "Miami",
+      "zip": "33127",
+      "county": "Miami-Dade",
+      "type": "Multi-Family",
+      "beds": 4,
+      "baths": 4,
+      "sqft": 1788,
+      "lot": 4350,
+      "year": null,
+      "pool": false,
+      "parking": "",
+      "extras": [],
+      "notes": "Triplex (4 units per county).",
+      "photos": "",
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/fjivebxw/image/upload/v1795813660/145-nw-32nd-st-miami.jpg",
+          "alt": "145 NW 32nd St, Miami, FL 33127"
+        }
+      ],
+      "price": 746000
+    },
     {
       "slug": "11010-sw-165th-ter-miami-fl-33157",
       "address": "11010 SW 165th Ter",
